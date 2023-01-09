@@ -159,7 +159,7 @@ namespace Lottery_Machine
                         {
                             if (quai < 1 || quai > 999)
                             {
-                                speech.Speak("The value of 'Quality' you entered is not in the valid range. Valid range: from one to nine hundred and ninty-nine.");
+                                speech.Speak("The value of 'Quality' you entered is not in the valid range. Valid range: from one to nine hundred and ninety-nine.");
                             }
                             else if (quai != 1)
                             {
