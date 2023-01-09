@@ -30,7 +30,7 @@ namespace Lottery_Machine
                 num = Array.IndexOf(n, re.ToString());
                 i++;
             }
-            if(i>=10000000)
+            if (i>=10000000)
             {
                 return -2147483648;
             }
@@ -147,7 +147,7 @@ namespace Lottery_Machine
                     int r = generate(mini, maxi, nl, rd);
                     if (mini == -2147483648 || maxi == -2147483648)
                     {
-                        speech.Speak("The value of 'Don't want to see' you entered is not in the valid range. Valid range: -2147483647~2147483648.");
+                        speech.Speak("The value of 'Don't want to see' you entered is not in the valid range. Valid range: from minus two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-seven to two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-eight.");
                     }
                     else
                     {
@@ -159,7 +159,7 @@ namespace Lottery_Machine
                         {
                             if (quai < 1 || quai > 999)
                             {
-                                speech.Speak("The value of 'Quality' you entered is not in the valid range.\nValid range: 1~999.");
+                                speech.Speak("The value of 'Quality' you entered is not in the valid range. Valid range: from one to nine hundred and ninty-nine.");
                             }
                             else if (quai != 1)
                             {
@@ -181,7 +181,7 @@ namespace Lottery_Machine
                 }
                 else
                 {
-                    speech.Speak("Why did 'Minimum' < 'Maximum'?");
+                    speech.Speak("Why did 'Minimum' smaller than 'Maximum'?");
                 }
             }
             else
