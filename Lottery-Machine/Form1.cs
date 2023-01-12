@@ -24,7 +24,7 @@ namespace Lottery_Machine
             int i = 0;
             int re = r.Next(min, max + 1);
             int num = Array.IndexOf(n, re.ToString());
-            while ((num >= 0) && i<=10000000)
+            while (num >= 0 && i<=10000000)
             {
                 re = r.Next(min, max + 1);
                 num = Array.IndexOf(n, re.ToString());
