@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using System.Speech.Synthesis;
+using System.Threading;
 
 namespace Lottery_Machine
 {
@@ -117,7 +118,7 @@ namespace Lottery_Machine
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void speak()
         {
             SpeechSynthesizer speech = new SpeechSynthesizer();
             Random rd = new Random();
@@ -188,6 +189,11 @@ namespace Lottery_Machine
             {
                 speech.Speak("Please enter correct numbers.");
             }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(speak);
+            thread.Start();
         }
     }
 }
