@@ -7,10 +7,7 @@ namespace Lottery_Machine
 {
     public partial class MainForm : Form
     {
-        public MainForm()
-        {
-            InitializeComponent();
-        }
+        public MainForm() { InitializeComponent(); }
 
         /// <summary>
         /// This is a function that can generate random numbers.
