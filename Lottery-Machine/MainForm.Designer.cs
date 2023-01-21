@@ -1,4 +1,4 @@
-﻿namespace Lottery_Machine
+namespace Lottery_Machine
 {
     partial class MainForm
     {
