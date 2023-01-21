@@ -20,6 +20,7 @@ jobs:
     env:
       Solution_Name: Lottery-Machine.sln
       Test_Project_Path: Lottery-Machine\Lottery-Machine.csproj
+      Wap_Project_Path: Lottery-Machine
 
     steps:
     - name: Checkout
