@@ -22,10 +22,9 @@ namespace Lottery_Machine
             int i = 0;
             int re = r.Next(min, max + 1);
             int num = Array.IndexOf(n, re.ToString());
-            while (num >= 0 && i <= 10000000)
+            while (Array.IndexOf(n, re.ToString()) >= 0 && i <= 10000000)
             {
                 re = r.Next(min, max + 1);
-                num = Array.IndexOf(n, re.ToString());
                 i++;
             }
             if (i>=10000000) { return -2147483648; }
@@ -37,19 +36,15 @@ namespace Lottery_Machine
         private void button1_Click(object sender, EventArgs e)
         {
             Random rd = new Random();
-            string dwss = dwst.Text.ToString();
-            string[] nl = dwss.Split(' ');
+            string[] nl = dwst.Text.ToString().Split(' ');
             int mini, maxi, quai;
-            bool minb = int.TryParse(mint.Text.ToString(), out mini);
-            bool maxb = int.TryParse(maxt.Text.ToString(), out maxi);
-            bool quab = int.TryParse(quat.Text.ToString(), out quai);
-            if (minb==true && maxb==true)
+            if (int.TryParse(mint.Text.ToString(), out mini)==true && int.TryParse(maxt.Text.ToString(), out maxi)==true)
             {
                 mini = int.Parse(mint.Text.ToString());
                 maxi = int.Parse(maxt.Text.ToString());
                 if (mini<=maxi)
                 {                    
-                    if (quab == false) { quai = 1; }
+                    if (int.TryParse(quat.Text.ToString(), out quai) == false) { quai = 1; }
                     else { quai = int.Parse(quat.Text.ToString()); }
                     int r = generate(mini, maxi, nl, rd);
                     if (mini == -2147483648 || maxi == -2147483648) { MessageBox.Show("The value of 'Don't want to see' you entered is not in the valid range.\nValid range: -2147483647~2147483648.", "Range", 0, MessageBoxIcon.Warning); }
@@ -82,19 +77,15 @@ namespace Lottery_Machine
         {
             SpeechSynthesizer speech = new SpeechSynthesizer();
             Random rd = new Random();
-            string dwss = dwst.Text.ToString();
-            string[] nl = dwss.Split(' ');
+            string[] nl = dwst.Text.ToString().Split(' ');
             int mini, maxi, quai;
-            bool minb = int.TryParse(mint.Text.ToString(), out mini);
-            bool maxb = int.TryParse(maxt.Text.ToString(), out maxi);
-            bool quab = int.TryParse(quat.Text.ToString(), out quai);
-            if (minb == true && maxb == true)
+            if (int.TryParse(mint.Text.ToString(), out mini) == true && int.TryParse(maxt.Text.ToString(), out maxi) == true)
             {
                 mini = int.Parse(mint.Text.ToString());
                 maxi = int.Parse(maxt.Text.ToString());
                 if (mini <= maxi)
                 {
-                    if (quab == false) { quai = 1; }
+                    if (int.TryParse(quat.Text.ToString(), out quai) == false) { quai = 1; }
                     else { quai = int.Parse(quat.Text.ToString()); }
                     int r = generate(mini, maxi, nl, rd);
                     if (mini == -2147483648 || maxi == -2147483648) { speech.Speak("The value of 'Don't want to see' you entered is not in the valid range. Valid range: from minus two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-seven to two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-eight."); }
