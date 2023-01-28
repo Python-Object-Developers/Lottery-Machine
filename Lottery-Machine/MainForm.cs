@@ -36,7 +36,7 @@ namespace Lottery_Machine
         {
             Random rd = new Random();
             string[] nl = dwst.Text.ToString().Split(' ');
-            if (int.TryParse(mint.Text.ToString(), out int mini)==true && int.TryParse(maxt.Text.ToString(), out int maxi)==true)
+            if (int.TryParse(mint.Text.ToString(), out int mini) && int.TryParse(maxt.Text.ToString(), out int maxi))
             {
                 mini = int.Parse(mint.Text.ToString());
                 maxi = int.Parse(maxt.Text.ToString());
@@ -76,7 +76,7 @@ namespace Lottery_Machine
             SpeechSynthesizer speech = new SpeechSynthesizer();
             Random rd = new Random();
             string[] nl = dwst.Text.ToString().Split(' ');
-            if (int.TryParse(mint.Text.ToString(), out int mini) == true && int.TryParse(maxt.Text.ToString(), out int maxi) == true)
+            if (int.TryParse(mint.Text.ToString(), out int mini) && int.TryParse(maxt.Text.ToString(), out int maxi))
             {
                 mini = int.Parse(mint.Text.ToString());
                 maxi = int.Parse(maxt.Text.ToString());
