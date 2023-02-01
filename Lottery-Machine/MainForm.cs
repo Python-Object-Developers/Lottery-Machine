@@ -45,7 +45,7 @@ namespace Lottery_Machine
                     if (int.TryParse(quat.Text, out int quai) == false) { quai = 1; }
                     else { quai = int.Parse(quat.Text); }
                     int r = Generate(mini, maxi, nl, rd);
-                    if (mini == -2147483648 || maxi == -2147483648) { MessageBox.Show("The value of 'Don't want to see' you entered is not in the valid range.\nValid range: -2147483647~2147483648.", "Range", 0, MessageBoxIcon.Warning); }
+                    if (mini == -2147483648) { MessageBox.Show("The value of 'Minimum' you entered is not in the valid range.\nValid range: -2147483647~2147483648.", "Range", 0, MessageBoxIcon.Warning); }
                     else
                     {
                         if (r == -2147483648) { MessageBox.Show("This is not a joke.", "Joke", 0, MessageBoxIcon.Warning); }
@@ -85,7 +85,7 @@ namespace Lottery_Machine
                     if (int.TryParse(quat.Text, out int quai) == false) { quai = 1; }
                     else { quai = int.Parse(quat.Text); }
                     int r = Generate(mini, maxi, nl, rd);
-                    if (mini == -2147483648 || maxi == -2147483648) { speech.Speak("The value of 'Don't want to see' you entered is not in the valid range. Valid range: from minus two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-seven to two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-eight."); }
+                    if (mini == -2147483648) { speech.Speak("The value of 'Minimum' you entered is not in the valid range. Valid range: from minus two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-seven to two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-eight."); }
                     else
                     {
                         if (r == -2147483648) { speech.Speak("These are not jokes."); }
