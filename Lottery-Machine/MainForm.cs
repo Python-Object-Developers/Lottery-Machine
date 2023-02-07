@@ -26,8 +26,8 @@ namespace Lottery_Machine
                 re = r.Next(min, max + 1);
                 i++;
             }
-            if (i>=10000000) { return -2147483648; }
-            else { return re; }
+            if (i>=10000000) return -2147483648;
+            else return re;
         }
 
         private void button2_Click(object sender, EventArgs e) { Close(); }
@@ -42,16 +42,16 @@ namespace Lottery_Machine
                 maxi = int.Parse(maxt.Text);
                 if (mini<=maxi)
                 {                    
-                    if (int.TryParse(quat.Text, out int quai) == false) { quai = 1; }
-                    else { quai = int.Parse(quat.Text); }
+                    if (int.TryParse(quat.Text, out int quai) == false) quai = 1;
+                    else quai = int.Parse(quat.Text);
                     int r = Generate(mini, maxi, nl, rd);
-                    if (mini == -2147483648) { MessageBox.Show("The value of 'Minimum' you entered is not in the valid range.\nValid range: -2147483647~2147483648.", "Range", 0, MessageBoxIcon.Warning); }
+                    if (mini == -2147483648) MessageBox.Show("The value of 'Minimum' you entered is not in the valid range.\nValid range: -2147483647~2147483648.", "Range", 0, MessageBoxIcon.Warning);
                     else
                     {
-                        if (r == -2147483648) { MessageBox.Show("This is not a joke.", "Joke", 0, MessageBoxIcon.Warning); }
+                        if (r == -2147483648) MessageBox.Show("This is not a joke.", "Joke", 0, MessageBoxIcon.Warning);
                         else
                         {
-                            if (quai < 1 || quai > 999) { MessageBox.Show("The value of 'Quality' you entered is not in the valid range.\nValid range: 1~999.", "Range", 0, MessageBoxIcon.Warning); }
+                            if (quai < 1 || quai > 999) MessageBox.Show("The value of 'Quality' you entered is not in the valid range.\nValid range: 1~999.", "Range", 0, MessageBoxIcon.Warning);
                             else if (quai != 1)
                             {
                                 int[] rl = new int[quai];
@@ -62,13 +62,13 @@ namespace Lottery_Machine
                                 }
                                 MessageBox.Show($"Numbers: {String.Join(", ", rl)}.", "Generate", 0, MessageBoxIcon.Information);
                             } 
-                            else { MessageBox.Show($"Number {r}.", "Generate", 0, MessageBoxIcon.Information); }
+                            else MessageBox.Show($"Number {r}.", "Generate", 0, MessageBoxIcon.Information);
                         }
                     }
                 }
-                else { MessageBox.Show("Why did 'Minimum' < 'Maximum'?", "Check", 0, MessageBoxIcon.Warning); }
+                else MessageBox.Show("Why did 'Minimum' < 'Maximum'?", "Check", 0, MessageBoxIcon.Warning);
             }
-            else { MessageBox.Show("Please enter correct numbers.", "Check", 0, MessageBoxIcon.Warning); }
+            else MessageBox.Show("Please enter correct numbers.", "Check", 0, MessageBoxIcon.Warning);
         }
 
         public void speak()
@@ -82,16 +82,16 @@ namespace Lottery_Machine
                 maxi = int.Parse(maxt.Text);
                 if (mini <= maxi)
                 {
-                    if (int.TryParse(quat.Text, out int quai) == false) { quai = 1; }
-                    else { quai = int.Parse(quat.Text); }
+                    if (int.TryParse(quat.Text, out int quai) == false) quai = 1;
+                    else quai = int.Parse(quat.Text);
                     int r = Generate(mini, maxi, nl, rd);
-                    if (mini == -2147483648) { speech.Speak("The value of 'Minimum' you entered is not in the valid range. Valid range: from minus two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-seven to two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-eight."); }
+                    if (mini == -2147483648) speech.Speak("The value of 'Minimum' you entered is not in the valid range. Valid range: from minus two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-seven to two billion one hundred and forty-seven million four hundred and eighty-three thousand six hundred and forty-eight.");
                     else
                     {
-                        if (r == -2147483648) { speech.Speak("These are not jokes."); }
+                        if (r == -2147483648) speech.Speak("These are not jokes.");
                         else
                         {
-                            if (quai < 1 || quai > 999) { speech.Speak("The value of 'Quality' you entered is not in the valid range. Valid range: from one to nine hundred and ninety-nine."); }
+                            if (quai < 1 || quai > 999) speech.Speak("The value of 'Quality' you entered is not in the valid range. Valid range: from one to nine hundred and ninety-nine.");
                             else if (quai != 1)
                             {
                                 int[] rl = new int[quai];
@@ -102,13 +102,13 @@ namespace Lottery_Machine
                                 }
                                 speech.Speak(String.Join(", ", rl));
                             }
-                            else { speech.Speak(r.ToString()); }
+                            else speech.Speak(r.ToString());
                         }
                     }
                 }
-                else { speech.Speak("Why did 'Minimum' smaller than 'Maximum'?"); }
+                else speech.Speak("Why did 'Minimum' smaller than 'Maximum'?");
             }
-            else { speech.Speak("Please enter correct numbers."); }
+            else speech.Speak("Please enter correct numbers.");
         }
 
         private void button3_Click(object sender, EventArgs e)
