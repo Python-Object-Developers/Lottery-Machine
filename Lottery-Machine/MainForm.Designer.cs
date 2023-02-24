@@ -133,7 +133,7 @@ namespace Lottery_Machine
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Quality:";
+            this.label4.Text = "Quantity:";
             // 
             // button3
             // 
