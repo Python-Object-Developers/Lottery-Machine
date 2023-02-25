@@ -30,47 +30,6 @@ namespace Lottery_Machine
             else return re;
         }
 
-        private void button2_Click(object sender, EventArgs e) { Close(); }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Random rd = new Random();
-            string[] nl = dwst.Text.Split(' ');
-            if (int.TryParse(mint.Text, out int mini) && int.TryParse(maxt.Text, out int maxi))
-            {
-                mini = int.Parse(mint.Text);
-                maxi = int.Parse(maxt.Text);
-                if (mini<=maxi)
-                {                    
-                    if (int.TryParse(quat.Text, out int quai) == false) quai = 1;
-                    else quai = int.Parse(quat.Text);
-                    int r = Generate(mini, maxi, nl, rd);
-                    if (mini == -2147483648) MessageBox.Show("The value of 'Minimum' you entered is not in the valid range.\nValid range: -2147483647~2147483648.", "Range", 0, MessageBoxIcon.Warning);
-                    else
-                    {
-                        if (r == -2147483648) MessageBox.Show("This is not a joke.", "Joke", 0, MessageBoxIcon.Warning);
-                        else
-                        {
-                            if (quai < 1 || quai > 999) MessageBox.Show("The value of 'Quality' you entered is not in the valid range.\nValid range: 1~999.", "Range", 0, MessageBoxIcon.Warning);
-                            else if (quai != 1)
-                            {
-                                int[] rl = new int[quai];
-                                for (int i = 0; i < quai; i++)
-                                {
-                                    r = Generate(mini, maxi, nl, rd);
-                                    rl[i] = r;
-                                }
-                                MessageBox.Show($"Numbers: {String.Join(", ", rl)}.", "Generate", 0, MessageBoxIcon.Information);
-                            } 
-                            else MessageBox.Show($"Number {r}.", "Generate", 0, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-                else MessageBox.Show("Why did 'Minimum' < 'Maximum'?", "Check", 0, MessageBoxIcon.Warning);
-            }
-            else MessageBox.Show("Please enter correct numbers.", "Check", 0, MessageBoxIcon.Warning);
-        }
-
         public void speak()
         {
             SpeechSynthesizer speech = new SpeechSynthesizer();
@@ -111,7 +70,48 @@ namespace Lottery_Machine
             else speech.Speak("Please enter correct numbers.");
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) { Close(); }
+
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            Random rd = new Random();
+            string[] nl = dwst.Text.Split(' ');
+            if (int.TryParse(mint.Text, out int mini) && int.TryParse(maxt.Text, out int maxi))
+            {
+                mini = int.Parse(mint.Text);
+                maxi = int.Parse(maxt.Text);
+                if (mini <= maxi)
+                {
+                    if (int.TryParse(quat.Text, out int quai) == false) quai = 1;
+                    else quai = int.Parse(quat.Text);
+                    int r = Generate(mini, maxi, nl, rd);
+                    if (mini == -2147483648) MessageBox.Show("The value of 'Minimum' you entered is not in the valid range.\nValid range: -2147483647~2147483648.", "Range", 0, MessageBoxIcon.Warning);
+                    else
+                    {
+                        if (r == -2147483648) MessageBox.Show("This is not a joke.", "Joke", 0, MessageBoxIcon.Warning);
+                        else
+                        {
+                            if (quai < 1 || quai > 999) MessageBox.Show("The value of 'Quality' you entered is not in the valid range.\nValid range: 1~999.", "Range", 0, MessageBoxIcon.Warning);
+                            else if (quai != 1)
+                            {
+                                int[] rl = new int[quai];
+                                for (int i = 0; i < quai; i++)
+                                {
+                                    r = Generate(mini, maxi, nl, rd);
+                                    rl[i] = r;
+                                }
+                                MessageBox.Show($"Numbers: {String.Join(", ", rl)}.", "Generate", 0, MessageBoxIcon.Information);
+                            }
+                            else MessageBox.Show($"Number {r}.", "Generate", 0, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                else MessageBox.Show("Why did 'Minimum' < 'Maximum'?", "Check", 0, MessageBoxIcon.Warning);
+            }
+            else MessageBox.Show("Please enter correct numbers.", "Check", 0, MessageBoxIcon.Warning);
+        }
+
+        private void uiButton2_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(speak);
             thread.Start();
