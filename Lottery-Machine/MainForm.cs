@@ -70,9 +70,9 @@ namespace Lottery_Machine
             else speech.Speak("Please enter correct numbers.");
         }
 
-        private void button2_Click(object sender, EventArgs e) { Close(); }
+        private void quib_Click(object sender, EventArgs e) { Close(); }
 
-        private void uiButton1_Click(object sender, EventArgs e)
+        private void genb_Click(object sender, EventArgs e)
         {
             Random rd = new Random();
             string[] nl = dwst.Text.Split(' ');
@@ -111,7 +111,7 @@ namespace Lottery_Machine
             else MessageBox.Show("Please enter correct numbers.", "Check", 0, MessageBoxIcon.Warning);
         }
 
-        private void uiButton2_Click(object sender, EventArgs e)
+        private void gasb_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(speak);
             thread.Start();

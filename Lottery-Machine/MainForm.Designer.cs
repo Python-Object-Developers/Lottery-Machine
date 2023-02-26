@@ -32,9 +32,9 @@ namespace Lottery_Machine
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new Sunny.UI.UIButton();
-            this.uiButton1 = new Sunny.UI.UIButton();
-            this.uiButton2 = new Sunny.UI.UIButton();
+            this.quib = new Sunny.UI.UIButton();
+            this.genb = new Sunny.UI.UIButton();
+            this.gasb = new Sunny.UI.UIButton();
             this.mint = new Sunny.UI.UITextBox();
             this.maxt = new Sunny.UI.UITextBox();
             this.dwst = new Sunny.UI.UITextBox();
@@ -83,47 +83,50 @@ namespace Lottery_Machine
             this.label4.TabIndex = 8;
             this.label4.Text = "Quantity:";
             // 
-            // button2
+            // quib
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(180, 171);
-            this.button2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 29);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Quit";
-            this.button2.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.quib.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quib.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.quib.Location = new System.Drawing.Point(180, 171);
+            this.quib.MinimumSize = new System.Drawing.Size(1, 1);
+            this.quib.Name = "quib";
+            this.quib.Radius = 8;
+            this.quib.Size = new System.Drawing.Size(154, 29);
+            this.quib.TabIndex = 11;
+            this.quib.Text = "Quit";
+            this.quib.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.quib.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.quib.Click += new System.EventHandler(this.quib_Click);
             // 
-            // uiButton1
+            // genb
             // 
-            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(13, 171);
-            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(154, 29);
-            this.uiButton1.TabIndex = 12;
-            this.uiButton1.Text = "Generate";
-            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
+            this.genb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.genb.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.genb.Location = new System.Drawing.Point(13, 171);
+            this.genb.MinimumSize = new System.Drawing.Size(1, 1);
+            this.genb.Name = "genb";
+            this.genb.Radius = 8;
+            this.genb.Size = new System.Drawing.Size(154, 29);
+            this.genb.TabIndex = 12;
+            this.genb.Text = "Generate";
+            this.genb.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.genb.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.genb.Click += new System.EventHandler(this.genb_Click);
             // 
-            // uiButton2
+            // gasb
             // 
-            this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.Location = new System.Drawing.Point(13, 206);
-            this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(321, 29);
-            this.uiButton2.TabIndex = 13;
-            this.uiButton2.Text = "Generate and Speak";
-            this.uiButton2.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiButton2.Click += new System.EventHandler(this.uiButton2_Click);
+            this.gasb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gasb.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gasb.Location = new System.Drawing.Point(13, 206);
+            this.gasb.MinimumSize = new System.Drawing.Size(1, 1);
+            this.gasb.Name = "gasb";
+            this.gasb.Radius = 8;
+            this.gasb.Size = new System.Drawing.Size(321, 29);
+            this.gasb.TabIndex = 13;
+            this.gasb.Text = "Generate and Speak";
+            this.gasb.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gasb.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.gasb.Click += new System.EventHandler(this.gasb_Click);
             // 
             // mint
             // 
@@ -135,6 +138,7 @@ namespace Lottery_Machine
             this.mint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mint.MinimumSize = new System.Drawing.Size(1, 16);
             this.mint.Name = "mint";
+            this.mint.Radius = 8;
             this.mint.ShowText = false;
             this.mint.Size = new System.Drawing.Size(242, 29);
             this.mint.Style = Sunny.UI.UIStyle.Custom;
@@ -153,6 +157,7 @@ namespace Lottery_Machine
             this.maxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.maxt.MinimumSize = new System.Drawing.Size(1, 16);
             this.maxt.Name = "maxt";
+            this.maxt.Radius = 8;
             this.maxt.ShowText = false;
             this.maxt.Size = new System.Drawing.Size(242, 29);
             this.maxt.Style = Sunny.UI.UIStyle.Custom;
@@ -171,6 +176,7 @@ namespace Lottery_Machine
             this.dwst.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dwst.MinimumSize = new System.Drawing.Size(1, 16);
             this.dwst.Name = "dwst";
+            this.dwst.Radius = 8;
             this.dwst.ShowText = false;
             this.dwst.Size = new System.Drawing.Size(196, 29);
             this.dwst.Style = Sunny.UI.UIStyle.Custom;
@@ -189,6 +195,7 @@ namespace Lottery_Machine
             this.quat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.quat.MinimumSize = new System.Drawing.Size(1, 16);
             this.quat.Name = "quat";
+            this.quat.Radius = 8;
             this.quat.ShowText = false;
             this.quat.Size = new System.Drawing.Size(242, 29);
             this.quat.Style = Sunny.UI.UIStyle.Custom;
@@ -207,9 +214,9 @@ namespace Lottery_Machine
             this.Controls.Add(this.dwst);
             this.Controls.Add(this.maxt);
             this.Controls.Add(this.mint);
-            this.Controls.Add(this.uiButton2);
-            this.Controls.Add(this.uiButton1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.gasb);
+            this.Controls.Add(this.genb);
+            this.Controls.Add(this.quib);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -229,9 +236,9 @@ namespace Lottery_Machine
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Sunny.UI.UIButton button2;
-        private Sunny.UI.UIButton uiButton1;
-        private Sunny.UI.UIButton uiButton2;
+        private Sunny.UI.UIButton quib;
+        private Sunny.UI.UIButton genb;
+        private Sunny.UI.UIButton gasb;
         private Sunny.UI.UITextBox mint;
         private Sunny.UI.UITextBox maxt;
         private Sunny.UI.UITextBox dwst;
