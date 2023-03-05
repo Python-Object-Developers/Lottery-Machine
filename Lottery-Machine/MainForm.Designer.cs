@@ -223,6 +223,8 @@ namespace Lottery_Machine
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(362, 284);
+            this.MinimumSize = new System.Drawing.Size(362, 284);
             this.Name = "MainForm";
             this.Text = "Lottery Machine";
             this.ResumeLayout(false);
